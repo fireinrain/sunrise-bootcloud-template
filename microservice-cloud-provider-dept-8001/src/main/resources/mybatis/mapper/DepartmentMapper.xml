@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.sunrise.springcloud.dao.DepartmentDao">
+
+    <select id="findById" resultType="Department" parameterType="Long">
+        select dept_no, dept_name, db_source
+        from department
+        where dept_no = #{deptNo};
+    </select>
+    <select id="findAll" resultType="Department">
+        select dept_no, dept_name, db_source
+        from department;
+    </select>
+    <insert id="addDept" parameterType="Department">
+        INSERT INTO department(dept_name, db_source)
+        VALUES (#{deptName}, DATABASE());
+    </insert>
+
+</mapper>
+
+

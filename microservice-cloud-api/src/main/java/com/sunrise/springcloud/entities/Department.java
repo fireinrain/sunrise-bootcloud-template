@@ -18,19 +18,12 @@ import java.io.Serializable;
 @Data
 @Accessors(chain = true)
 public class Department implements Serializable {
-    private Integer id;
+    private Long deptNo;
     private String deptName;
-    private String db_source;
+    private String dbSource;
 
     public Department(String deptName) {
         this.deptName = deptName;
-    }
-
-    public static void main(String[] args) {
-        Department department = new Department().setDeptName("RD")
-                .setId(1)
-                .setDb_source("DB001");
-
     }
 
 }
