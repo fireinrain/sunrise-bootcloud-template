@@ -12,10 +12,10 @@
     <artifactId>microservice-cloud-eureka-7001</artifactId>
 
     <dependencies>
+        <!--eureka-server服务端 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-netflix-eureka-server</artifactId>
-
+            <artifactId>spring-cloud-starter-eureka-server</artifactId>
         </dependency>
         <!-- 修改后立即生效，热部署 -->
         <dependency>

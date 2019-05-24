@@ -3,10 +3,12 @@ server:
 
 eureka:
   instance:
-    hostname: localhost #eureka 服务端的实例名称
+    hostname: 127.0.0.1 #eureka 服务端的实例名称
   client:
     register-with-eureka: false # false 表示不向 注册中心注册自己
     fetch-registry: false # false 表示自己端就是注册中心，我的职责是维护服务实例，不需要检索服务
     service-url:
-      # 设置与eureka server 交互的地址查询服务和注册服务
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://127.0.0.1:${server.port}/eureka/ # 设置与eureka server 交互的地址查询服务和注册服务 都需要依赖这个地址
+spring:
+  application:
+    name: cloud-eureka-server-7001
