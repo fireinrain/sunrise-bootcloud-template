@@ -9,6 +9,8 @@ eureka:
     fetch-registry: false # false 表示自己端就是注册中心，我的职责是维护服务实例，不需要检索服务
     service-url:
       defaultZone: http://127.0.0.1:${server.port}/eureka/ # 设置与eureka server 交互的地址查询服务和注册服务 都需要依赖这个地址
+#  server:
+#    enable-self-preservation: false   # 强制关闭eureka的自我保护机制（不推荐）
 spring:
   application:
     name: cloud-eureka-server-7001
