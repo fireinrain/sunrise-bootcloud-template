@@ -23,14 +23,13 @@ public class DepartmentController {
         return departmentService.add(department);
     }
 
-    @RequestMapping(value = "/dept/get/{id}",method = RequestMethod.GET)
-    public Department get(@PathVariable("id") Long id){
+    @RequestMapping(value = "/dept/get/{id}", method = RequestMethod.GET)
+    public Department get(@PathVariable("id") Long id) {
         return departmentService.get(id);
     }
 
-    @RequestMapping(value = "/dept/list",method = RequestMethod.GET)
-    public List<Department> list(){
+    @RequestMapping(value = "/dept/list", method = RequestMethod.GET)
+    public List<Department> list() {
         return departmentService.list();
     }
-
 }
