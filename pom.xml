@@ -72,6 +72,7 @@
         <module>microservice-cloud-api</module>
         <module>microservice-cloud-provider-dept-8001</module>
         <module>microservice-cloud-consumer-dept-80</module>
+        <module>microservice-cloud-eureka-7001</module>
     </modules>
 
     <build>
