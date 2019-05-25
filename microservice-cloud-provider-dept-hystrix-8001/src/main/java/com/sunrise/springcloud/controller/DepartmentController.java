@@ -8,6 +8,7 @@ import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -46,7 +47,18 @@ public class DepartmentController {
                 .setDeptName("id: " + id + "该id无记录，不在数据库").setDbSource("@hystrixFallBackProcessGet，请及时检查服务");
     }
 
+    public List<Department> hystrixFallBackProcessList() {
+        List<Department> departments = new ArrayList<>();
+        departments.add(new Department()
+                .setDeptNo((long)-1)
+                .setDeptName("该列表，不在数据库").setDbSource("@hystrixFallBackProcessGet，请及时检查服务"));
+        return departments;
+
+    }
+
     @RequestMapping(value = "/dept/list", method = RequestMethod.GET)
+    //只有被注解了@HystrixCommand 才能被hystrix dashboard 监控到
+    @HystrixCommand(fallbackMethod = "hystrixFallBackProcessList")
     public List<Department> list() {
         return departmentService.list();
     }
