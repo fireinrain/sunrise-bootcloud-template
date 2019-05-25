@@ -2,6 +2,7 @@ package com.sunrise.springcloud.cfgbeans;
 
 import com.netflix.loadbalancer.IRule;
 import com.netflix.loadbalancer.RandomRule;
+import com.sunrise.roadrule.CustomLoadBalanceRule;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -23,8 +24,10 @@ public class ConfigBean {
 
     @Bean
     public IRule myRandomRule(){
-        return new RandomRule();  //替换掉Ribbon默认的轮训算法
+//        return new RandomRule();  //替换掉Ribbon默认的轮训算法
                                     //默认为RoundRobinRule
+        //自定义算法
+        return new CustomLoadBalanceRule();
     }
 
 
