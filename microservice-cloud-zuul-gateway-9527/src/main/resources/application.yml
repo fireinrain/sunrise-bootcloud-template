@@ -1,0 +1,30 @@
+server:
+  port: 9527
+
+spring:
+  application:
+    name: microservice-cloud-zuul-gateway
+
+eureka:
+  client: #客户端注册进eureka服务列表内
+    service-url:
+      #      defaultZone: http://localhost:7001/eureka   # 单机版
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/  # 集群版，高可用啊
+  instance:
+    instance-id: microservice-cloud-zuul-gateway-9527
+    prefer-ip-address: true     #访问路径可以显示IP地址
+info:
+  app.name: sunrise-microservice-cloud
+  company.name: www.sunrise.com
+  build.artifactId: ${project.artifactId}
+  build.version: ${project.version}
+
+zuul:
+  routes:
+    dept.serviceId: microservice-cloud-dept
+    dept.path: /sunrise-dept/**
+  ignored-services: microservice-cloud-dept  # 忽略该真实服务地址
+#  prefix: /sunrise     # 添加网关前缀
+#  ignored-services: "*"  # 忽略所有真实服务地址
+
+#  zuul 路由规则配置
