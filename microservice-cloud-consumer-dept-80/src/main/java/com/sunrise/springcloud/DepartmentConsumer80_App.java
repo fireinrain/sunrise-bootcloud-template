@@ -22,7 +22,7 @@ import org.springframework.cloud.netflix.ribbon.RibbonClient;
 //那么解决方案是重新在java包下再建一个包名，并把MySelfRule类放入该包内。
 // 比如我们需要访问一个Product 微服务，接口还在这里，想要定制和其他的ribbon实例
 //不一样的负载均衡算法，就可以使用这种方式
-@RibbonClient(name="MICROSERVICECLOUD-USER",configuration= CustomLoadBalanceRuleConfig.class)
+@RibbonClient(name="MICROSERVICE-CLOUD-DEPT",configuration= CustomLoadBalanceRuleConfig.class)
 public class DepartmentConsumer80_App {
     public static void main(String[] args) {
         SpringApplication.run(DepartmentConsumer80_App.class, args);
