@@ -22,13 +22,11 @@ public class ConfigBean {
         return new RestTemplate();
     }
 
-    @Bean
-    public IRule myRandomRule(){
+//    @Bean
+//    public IRule myRandomRule(){
 //        return new RandomRule();  //替换掉Ribbon默认的轮训算法
-                                    //默认为RoundRobinRule
-        //自定义算法
-        return new CustomLoadBalanceRule();
-    }
+        //默认为RoundRobinRule
+//    }
 
 
 }
