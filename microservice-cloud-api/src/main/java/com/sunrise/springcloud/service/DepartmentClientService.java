@@ -14,7 +14,7 @@ import java.util.List;
  * @auther: sunrise
  * @Gmail: liu575563079@gmail.com
  */
-@FeignClient(value = "MICROSERVICE-CLOUD-DEPT")
+@FeignClient(value = "MICROSERVICE-CLOUD-DEPT",fallbackFactory = DepartmentConsumerFallBackFactory.class)
 public interface DepartmentClientService {
     @RequestMapping(value = "/dept/add", method = RequestMethod.POST)
     boolean add(Department department);
