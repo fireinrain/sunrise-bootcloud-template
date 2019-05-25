@@ -81,6 +81,7 @@
         <module>microservice-cloud-provider-dept-hystrix-8001</module>
         <module>microservice-cloud-consumer-hystrix-dashboard</module>
         <module>microservice-cloud-zuul-gateway-9527</module>
+        <module>microservice-cloud-config-3344</module>
     </modules>
 
     <build>
