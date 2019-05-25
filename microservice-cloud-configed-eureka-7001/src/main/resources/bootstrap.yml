@@ -1,0 +1,8 @@
+spring: 
+  cloud: 
+    config: 
+      name: microservice-cloud-configed-eureka-server     #需要从github上读取的资源名称，注意没有yml后缀名
+      profile: dev 
+      label: master 
+      uri: http://localhost:3344      #SpringCloudConfig获取的服务地址
+

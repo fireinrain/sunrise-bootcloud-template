@@ -8,7 +8,7 @@ spring:
     config:
       server:
         git:
-          uri: git@github.com:lzhaoyang/sunrise-bootcloud-config.git #GitHub上面的git仓库名字
+          uri: git@github.com:lzhaoyang/sunrise-bootcloud-config.git  #GitHub上面的git仓库名字
 #security:
 #  basic:
 #    enabled: true

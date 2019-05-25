@@ -1,0 +1,4 @@
+spring:
+  application:
+    name: microservice-cloud-configed-eureka
+
